@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
             url: '/wp-admin/admin-ajax.php',
             data: {
                 action: 'custom_action',
-                test: test
+                'test' : 'test'
             },
             success:function (output) {
                 console.log(output);
