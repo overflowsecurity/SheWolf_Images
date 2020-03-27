@@ -16,17 +16,13 @@ class SheWolf_Bling_Images_Plugin{
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
         //test
         add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
-        add_action('wp_enqueue_scripts', array( $this, 'bling_add_scripts'));
         wp_enqueue_script('ajax-script', plugins_url('/assets/js/main.js', __FILE__), array('jquery'));
     }
 
     
 
 
-function bling_add_scripts()
-{
-    wp_enqueue_script('ajax-script', plugins_url('/assets/js/main.js', __FILE__), array('jquery'));
-}
+
 
 
 
@@ -60,15 +56,7 @@ function bling_add_scripts()
         public function plugin_settings_page_content(){
         global $content;
         global $wpdb;
-        //echo 'Hello World!';
-        //$query = "SELECT * FROM wp_postmeta WHERE meta_key = 'external_image_url';";
-        //echo $query;
-        //$results = $wpdb->get_row($query);
-        //echo $results->post_id;
 
-        //$test = $this->ImageFeeder();
-        //echo $test;
-            //echo "<script src='" . plugins_url('/assets/js/main.js', __FILE__) . "'></script>";
         ?>
 	    <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
 
