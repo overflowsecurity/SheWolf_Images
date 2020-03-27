@@ -32,8 +32,11 @@ class SheWolf_Bling_Images_Plugin{
     //Get image info
     $query = 'SELECT * FROM wp_postmeta WHERE post_id = 10551 AND meta_key = "external_image_url"';
     $response = $wpdb->get_row($query);
-    echo $response->meta_value;
+    //echo $response->meta_value;
     wp_die();
+
+    $cleanup = explode("|", $response->meta_value);
+    echo $cleanup[0];
 
     //return $results->meta_value;
     //$this->GetImages()
