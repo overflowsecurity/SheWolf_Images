@@ -7,7 +7,16 @@
 */
 
 
-add_action( 'wp_ajax_custom_action', 'custom_action' );
+
+
+class SheWolf_Bling_Images_Plugin{
+    public function __construct()
+    {
+        // Hook into the admin menu
+        add_action('admin_menu', array($this, 'create_plugin_settings_page'));
+    }
+
+    add_action( 'wp_ajax_custom_action', 'custom_action' );
 
 
 function bling_add_scripts()
@@ -29,14 +38,6 @@ add_action('wp_enqueue_scripts', 'bling_add_scripts');
     //return $results->meta_value;
     //$this->GetImages()
 }
-
-class SheWolf_Bling_Images_Plugin{
-    public function __construct()
-    {
-        // Hook into the admin menu
-        add_action('admin_menu', array($this, 'create_plugin_settings_page'));
-    }
-
 
     public function create_plugin_settings_page()
     {
