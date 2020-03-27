@@ -12,6 +12,7 @@ jQuery(document).ready(function($) {
             success:function (output) {
                 console.log(output);
                 $('#send_message').text('Success!');
+                var test = output;
             },
             error:function (error) {
                 console.log('Error');
