@@ -33,7 +33,8 @@ class SheWolf_Bling_Images_Plugin{
     //echo $urls;
     echo $cleanup[0];
     echo $cleanup[1];
-    echo $test;
+    $phpVar =  $_COOKIE['var1'];
+    echo $phpVar;
     wp_die();
 
 
