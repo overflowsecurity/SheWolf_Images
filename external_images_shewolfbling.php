@@ -3,7 +3,7 @@
     Plugin Name: SheWolf Bling External Images
     description: This is a test
     Author: Justin Tharpe
-    Version: 1.0.5
+    Version: 1.1.0
 */
 
 
