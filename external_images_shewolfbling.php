@@ -14,9 +14,12 @@ class SheWolf_Bling_Images_Plugin{
     {
         // Hook into the admin menu
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
+        //test
+        add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
+        add_action('wp_enqueue_scripts', array( $this, 'bling_add_scripts'));
     }
 
-    add_action( 'wp_ajax_custom_action', 'custom_action' );
+    
 
 
 function bling_add_scripts()
@@ -24,7 +27,7 @@ function bling_add_scripts()
     wp_enqueue_script('ajax-script', plugins_url('/assets/js/main.js', __FILE__), array('jquery'));
 }
 
-add_action('wp_enqueue_scripts', 'bling_add_scripts');
+
 
     function custom_action()
 {
