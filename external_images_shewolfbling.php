@@ -32,6 +32,7 @@ class SheWolf_Bling_Images_Plugin{
     $cleanup = explode(",", $urls);
     //echo $urls;
     echo $cleanup[0];
+    ?><br></br><?php
     echo $cleanup[1];
 
     wp_die();
