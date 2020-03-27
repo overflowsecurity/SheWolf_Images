@@ -21,11 +21,6 @@ class SheWolf_Bling_Images_Plugin{
 
     
 
-
-
-
-
-
     function custom_action()
 {
     global $wpdb;
@@ -38,8 +33,7 @@ class SheWolf_Bling_Images_Plugin{
     //echo $urls;
     echo $cleanup[0];
     echo $cleanup[1];
-    $test = $_REQUEST['test'];
-    echo $test;
+
     wp_die();
 
 
