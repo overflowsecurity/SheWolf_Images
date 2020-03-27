@@ -16,7 +16,7 @@ class SheWolf_Bling_Images_Plugin{
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
         //test
         add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
-        wp_enqueue_script('ajax-script', plugins_url('/assets/js/main.js', __FILE__), array('jquery'));
+
     }
 
     
@@ -56,7 +56,7 @@ class SheWolf_Bling_Images_Plugin{
         public function plugin_settings_page_content(){
         global $content;
         global $wpdb;
-
+        echo "<script src='" . plugins_url('/assets/js/main.js', __FILE__) . "'></script>";
         ?>
 	    <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
 
