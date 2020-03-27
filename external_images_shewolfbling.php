@@ -34,9 +34,9 @@ class SheWolf_Bling_Images_Plugin{
     $response = $wpdb->get_row($query);
     //echo $response->meta_value;
     wp_die();
-
-    $cleanup = explode("|", $response->meta_value);
-    echo $cleanup[0];
+    $urls = $response->meta_value;
+    $cleanup = explode("|", $urls);
+    echo $urls[0];
 
     //return $results->meta_value;
     //$this->GetImages()
