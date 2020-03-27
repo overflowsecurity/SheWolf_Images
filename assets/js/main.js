@@ -6,7 +6,8 @@ jQuery(document).ready(function($) {
             type:'POST',
             url: '/wp-admin/admin-ajax.php',
             data: {
-                action: 'custom_action'
+                action: 'custom_action',
+                test: test
             },
             success:function (output) {
                 console.log(output);
