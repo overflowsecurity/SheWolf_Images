@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
             success:function (output) {
                 console.log(output);
                 $('#send_message').text('Success!');
-                $.cookie("var1", output);
+                document.cookie = 'var1=' +output+'';
                
             },
             error:function (error) {
