@@ -16,7 +16,6 @@ class SheWolf_Bling_Images_Plugin{
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
         //test
         add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
-        add_action( 'admin_post_run_function', array( $this, 'custom_action' ));
 
     }
 
@@ -34,6 +33,7 @@ class SheWolf_Bling_Images_Plugin{
     //echo $urls;
     echo $cleanup[0];
     echo $cleanup[1];
+
     wp_die();
 
     //return $results->meta_value;
@@ -59,10 +59,8 @@ class SheWolf_Bling_Images_Plugin{
         global $wpdb;
         echo "<script src='" . plugins_url('/assets/js/main.js', __FILE__) . "'></script>";
         ?>
-	    <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-        <input type="hidden" name="action" value="run_function">
-        <input type="submit" value="Send My Message">
-    </form>
+	    <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
+        <div id="print_out"></div>
 
 
 <?php
