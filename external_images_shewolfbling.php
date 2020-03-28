@@ -145,13 +145,14 @@ class SheWolf_Bling_Images_Plugin{
                     array_shift($she_image_array);
                     update_post_meta($she_post_id, '_product_image_gallery', implode(',',$she_image_array));
                     echo "Attached!";
-            }
+                    $she_image_array = array();
+            }   
             } else {
                 echo "Product Already Has Image!";
         } 
 
     }
-            $she_image_array = array();
+            
         }
 
 }
