@@ -145,11 +145,11 @@ class SheWolf_Bling_Images_Plugin{
             $she_post_id = $id->post_id;
             $query = 'SELECT * FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = ' . $she_post_id . ";";
             foreach( $wpdb->get_results($query) as $key => $she_image_results) {
-                $she_image_ids = $she_image_results->ID;
+                $she_image_ids = $she_image_results;
                 foreach($she_image_ids as $she_image_id){
                     echo $she_post_id;
                     ?><br></br><?php
-                    echo $she_image_id;
+                    echo $she_image_id->ID;
                     ?><br></br><?php
                 }
 
