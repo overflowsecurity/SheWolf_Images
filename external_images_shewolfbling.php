@@ -31,7 +31,6 @@ class SheWolf_Bling_Images_Plugin{
     $query2 = 'SELECT post_id FROM wp_postmeta WHERE meta_key = "external_image_url";';
     $she_ids_result = $wpdb->get_results($query2);
     $she_ids_array = $she_ids_result;
-    var_dump($she_ids_array);
     foreach( $wpdb->get_results($query) as $key => $urls) {
         $she_ids = $urls->post_id;
         $she_urls = $urls->meta_value;
@@ -40,13 +39,13 @@ class SheWolf_Bling_Images_Plugin{
         ?><br></br> <?php
         //echo "Post ID: " . $she_ids . " ";
         //$this->GetImages($url_array, $she_ids, $desc);
-        $this->AssignImages($she_ids_result);
        // foreach($url_array as $url_clean){ 
             //echo "URLs: " . $url_clean . " ";
         //}
         ?><br></br> <?php
         
     }
+    $this->AssignImages($she_ids_result);
     //echo $response->meta_value;
     //$urls = $response->meta_value;
     //$cleanup = explode("|", $urls);
