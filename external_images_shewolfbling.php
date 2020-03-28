@@ -150,7 +150,7 @@ class SheWolf_Bling_Images_Plugin{
             ?><br></br><?php
 
             foreach($test as $image_id){
-                echo $image_id;
+                echo $image_id->ID;
                 ?><br></br><?php
             }
 /*             foreach( $wpdb->get_results($query) as $key => $she_image_results) {
