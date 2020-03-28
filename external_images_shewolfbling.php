@@ -22,14 +22,6 @@ class SheWolf_Bling_Images_Plugin{
 
     function custom_action()
 {
-    if ( 
-        ! isset( $_POST['name_of_nonce_field'] ) 
-        || ! wp_verify_nonce( $_POST['name_of_nonce_field'], 'custom_action_nonce') 
-    ) {
- 
-        exit('The form is not valid');
- 
-    }
     global $wpdb;
     //Get image info
     $query = 'SELECT * FROM wp_postmeta WHERE meta_key = "external_image_url"';
@@ -72,7 +64,6 @@ class SheWolf_Bling_Images_Plugin{
         global $wpdb;
         echo "<script src='" . plugins_url('/assets/js/main.js', __FILE__) . "'></script>";
         ?>
-	    <?php wp_nonce_field( 'custom_action_nonce', 'name_of_nonce_field' ); ?>
         <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
         <div id="print_out"></div>
 
