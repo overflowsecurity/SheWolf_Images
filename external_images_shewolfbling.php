@@ -32,6 +32,7 @@ class SheWolf_Bling_Images_Plugin{
         $she_ids = $urls->post_id;
         $she_urls = $urls->meta_value;
         $url_array = explode("|", $she_urls);
+        $desc = "Placeholder";
         ?><br></br> <?php
         //echo "Post ID: " . $she_ids . " ";
         $this->GetImages($url_array, $she_ids, $desc);
