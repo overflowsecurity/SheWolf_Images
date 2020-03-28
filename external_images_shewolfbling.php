@@ -16,6 +16,7 @@ class SheWolf_Bling_Images_Plugin{
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
         //test
         add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
+        add_action( 'wp_ajax_GetImages', array( $this, 'GetImages' ));
 
     }
 
@@ -90,7 +91,7 @@ class SheWolf_Bling_Images_Plugin{
         require_once(ABSPATH . "wp-admin" . '/includes/image.php');
         require_once(ABSPATH . "wp-admin" . '/includes/file.php');
         require_once(ABSPATH . "wp-admin" . '/includes/media.php');
-        
+
         foreach ($urls as $url) {
             $tmp = download_url($url);
             if (is_wp_error($tmp)) {
