@@ -145,17 +145,26 @@ class SheWolf_Bling_Images_Plugin{
                 //array_push($she_image_array, $she_image_id);
                 $she_image_array[] = $she_image_id;
             }
-            set_post_thumbnail($she_post_id, $she_image_array[0]);
-            if(sizeof($she_image_array) > 1) {
-                array_shift($she_image_array);
-                update_post_meta($she_post_id, '_product_image_gallery', implode(',',$she_image_array));
+            
+            $query2 = 'SELECT COUNT(*) FROM wp_postmeta WHERE post_id = ' . $she_post_id . 'AND meta_key = "_thumbnail_id";';
+            $she_checker = $wpdb->get_var($query2);
+            if($she_checker = 0){
+                set_post_thumbnail($she_post_id, $she_image_array[0]);
+                if(sizeof($she_image_array) > 1) {
+                    array_shift($she_image_array);
+                    update_post_meta($she_post_id, '_product_image_gallery', implode(',',$she_image_array));
+            }
+            } else {
+                echo "Product Already Has Images!";
+        }
+
     }
             $she_image_array = array();
         }
 
 }
 
-}
+
 
 
 new SheWolf_Bling_Images_Plugin();
