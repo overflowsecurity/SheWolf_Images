@@ -149,7 +149,7 @@ class SheWolf_Bling_Images_Plugin{
                 var_dump($she_image_ids);
                 echo $she_post_id;
                 ?><br></br><?php
-                echo $she_image_id;
+                echo $she_image_ids;
                 ?><br></br><?php
 /*                 foreach($she_image_ids as $she_image_id){
                     echo $she_post_id;
