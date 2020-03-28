@@ -33,9 +33,10 @@ class SheWolf_Bling_Images_Plugin{
     //echo $urls;
     echo $cleanup[0];
     echo $cleanup[1];
-
+    
     wp_die();
 
+    echo "Output: " . $_POST['send_message'];
     //return $results->meta_value;
     //$this->GetImages()
 }
