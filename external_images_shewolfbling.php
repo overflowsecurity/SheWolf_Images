@@ -35,7 +35,7 @@ class SheWolf_Bling_Images_Plugin{
         $desc = "Placeholder";
 
         //echo "Post ID: " . $she_ids . " ";
-        $this->GetImages($url_array, $she_ids, $desc);
+        //$this->GetImages($url_array, $she_ids, $desc);
       
     }
     
@@ -127,7 +127,8 @@ class SheWolf_Bling_Images_Plugin{
         global $wpdb;
         $she_iamge_array = array();
         foreach($ids as $id){
-            $she_post_id = $id->post_id;
+            //$she_post_id = $id->post_id;
+            $she_post_id = '10615'
             $query = 'SELECT ID FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = ' . $she_post_id . ";";
             $she_images = $wpdb->get_results($query);
             ?><br></br><?php
