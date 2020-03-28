@@ -96,8 +96,8 @@ class SheWolf_Bling_Images_Plugin{
                 // download failed, handle error
             }
 
-            //$post_id = 10508; // set 0 for no parent post id or simple attachment otherwise pass post id for include in post
-            //$desc = "The WordPress Logo";
+            $post_id = $post_id;
+            $desc = "The WordPress Logo";
             $file_array = array();
 
 // Set variables for storage
