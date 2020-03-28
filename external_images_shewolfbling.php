@@ -29,8 +29,9 @@ class SheWolf_Bling_Images_Plugin{
     foreach( $wpdb->get_results($query) as $key => $urls) {
         $she_ids = $urls->post_id;
         $she_urls = $urls->meta_value;
+        $url_array = explode("|", $she_urls);
         ?><br></br> <?php
-        echo "Post ID: " . $she_ids . "                  " . "Image URLs: " . $she_urls;
+        echo "Post ID: " . $she_ids . "                  " . "Image URLs: " . foreach($url_array as $key => $url_clean){ echo $url_clean}
         ?><br></br> <?php
     }
     //echo $response->meta_value;
