@@ -146,7 +146,7 @@ class SheWolf_Bling_Images_Plugin{
                     update_post_meta($she_post_id, '_product_image_gallery', implode(',',$she_image_array));
             }
             } else {
-                echo "Product Already Has Images!";
+                echo "Product Already Has Image!";
         } */
 
     }
