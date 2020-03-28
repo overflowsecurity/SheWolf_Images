@@ -92,18 +92,16 @@ class SheWolf_Bling_Images_Plugin{
         require_once(ABSPATH . "wp-admin" . '/includes/image.php');
         require_once(ABSPATH . "wp-admin" . '/includes/file.php');
         require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+        $counter = 0;    
 
         foreach ($urls as $url) {
             $tmp = download_url($url);
+            $counter++
             if (is_wp_error($tmp)) {
                 // download failed, handle error
             }
 
             $post_id = $post_id;
-            $counter = 0;  
-            if($counter < 10) {
-                $counter++;
-            }        
             $desc = $post_id . "-" . $counter;
             $file_array = array();
 
