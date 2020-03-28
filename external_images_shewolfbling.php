@@ -136,8 +136,7 @@ class SheWolf_Bling_Images_Plugin{
             ?><br></br><?php
             foreach($she_images as $image_id){
                 $she_image_id = $image_id->ID;
-                $she_image_array = $she_image_id;
-                array_push($she_image_array, $she_image_id);
+                array_push($she_image_array, $she_image_id, $she_image_id);
                 ?><br></br><?php
             }
             set_post_thumbnail($she_post_id, $she_image_array[0]);
