@@ -14,10 +14,7 @@ class SheWolf_Bling_Images_Plugin{
     {
         // Hook into the admin menu
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
-        //test
-        add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
-        //add_action( 'admin_post_GetImages', array( $this, 'GetImages', 10,3 ));
-        
+        add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));        
 
     }
 
@@ -36,33 +33,20 @@ class SheWolf_Bling_Images_Plugin{
         $she_urls = $urls->meta_value;
         $url_array = explode("|", $she_urls);
         $desc = "Placeholder";
-        ?><br></br> <?php
+
         //echo "Post ID: " . $she_ids . " ";
-        //$this->GetImages($url_array, $she_ids, $desc);
-       // foreach($url_array as $url_clean){ 
-            //echo "URLs: " . $url_clean . " ";
-        //}
-        ?><br></br> <?php
-        
+        $this->GetImages($url_array, $she_ids, $desc);
+      
     }
+    
     $this->AssignImages($she_ids_result);
-    //echo $response->meta_value;
-    //$urls = $response->meta_value;
-    //$cleanup = explode("|", $urls);
-    //echo $urls;
-    //echo $cleanup[0];
-    //echo $cleanup[1];
     
     wp_die();
 
     echo "Output: " . $_POST['send_message'];
-    //return $results->meta_value;
-    //$this->GetImages()
-}
 
     public function create_plugin_settings_page()
     {
-
 
         // Add the menu item and page
         $page_title = 'SheWolf External Images Settings';
@@ -141,25 +125,26 @@ class SheWolf_Bling_Images_Plugin{
 
     public function AssignImages($ids){
         global $wpdb;
-        $test_array = array();
+        $she_iamge_array = array();
         foreach($ids as $id){
             $she_post_id = $id->post_id;
             $query = 'SELECT ID FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = ' . $she_post_id . ";";
-            $test = $wpdb->get_results($query);
+            $she_images = $wpdb->get_results($query);
             ?><br></br><?php
             echo "Post ID: " . $she_post_id;
             ?><br></br><?php
-            foreach($test as $image_id){
-                $test = $image_id->ID;
-                array_push($test_array, $test);
+            foreach($she_images as $image_id){
+                $she_image_id = $image_id->ID;
+                array_push($she_image_array, $she_image_id);
                 ?><br></br><?php
             }
-            var_dump($test_array);
-            $test_array = array();
-
+            set_post_thumbnail($she_post_id, $she_image_array[0]);
+            if(sizeof($she_image_array) > 1) {
+                array_shift($she_image_array);
+                update_post_meta($she_post_id, '_product_image_gallery', implode(',',$she_image_array));
     }
-
-}
+            $she_image_array = array();
+        }
 
 }
 
