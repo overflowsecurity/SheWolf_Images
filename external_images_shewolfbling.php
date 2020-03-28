@@ -96,7 +96,7 @@ class SheWolf_Bling_Images_Plugin{
 
         foreach ($urls as $url) {
             $tmp = download_url($url);
-            $counter++
+            $counter++;
             if (is_wp_error($tmp)) {
                 // download failed, handle error
             }
