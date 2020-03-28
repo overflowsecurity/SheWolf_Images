@@ -114,6 +114,8 @@ class SheWolf_Bling_Images_Plugin{
                     @unlink($file_array['tmp_name']);
                     return $id;
                 }
+            } else {
+                exit;
             }
         }
     }
