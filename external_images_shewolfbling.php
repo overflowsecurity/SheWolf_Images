@@ -32,11 +32,12 @@ class SheWolf_Bling_Images_Plugin{
         $url_array = explode("|", $she_urls);
         ?><br></br> <?php
         echo "Post ID: " . $she_ids . " ";
+        media_handle_sideload($url_array, $she_ids, $desc);
         foreach($url_array as $url_clean){ 
             echo "URLs: " . $url_clean . " ";
         }
         ?><br></br> <?php
-        echo $url_array;
+        
     }
     //echo $response->meta_value;
     //$urls = $response->meta_value;
