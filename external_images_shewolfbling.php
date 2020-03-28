@@ -23,6 +23,13 @@ class SheWolf_Bling_Images_Plugin{
 
     function custom_action()
 {
+
+    if (!function_exists('media_handle_upload')) {
+        require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+        require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+        require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+    }
+    
     global $wpdb;
     //Get image info
     $query = 'SELECT * FROM wp_postmeta WHERE meta_key = "external_image_url"';
@@ -84,11 +91,7 @@ class SheWolf_Bling_Images_Plugin{
     public function GetImages($urls, $post_id, $desc)
     {
 
-        if (!function_exists('media_handle_upload')) {
-            require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-            require_once(ABSPATH . "wp-admin" . '/includes/file.php');
-            require_once(ABSPATH . "wp-admin" . '/includes/media.php');
-        }
+
 
         foreach ($urls as $url) {
             $tmp = download_url($url);
