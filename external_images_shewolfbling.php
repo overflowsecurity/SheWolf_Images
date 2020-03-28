@@ -126,8 +126,7 @@ class SheWolf_Bling_Images_Plugin{
     public function AssignImages($ids){
         global $wpdb;
         foreach($ids as $id){
-            //$she_post_id = $id->post_id;
-            $she_post_id = '10615';
+            $she_post_id = $id->post_id;
             $query = 'SELECT ID FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = ' . $she_post_id . ";";
             $she_images = $wpdb->get_results($query);
             ?><br></br><?php
