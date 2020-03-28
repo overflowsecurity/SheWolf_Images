@@ -125,7 +125,7 @@ class SheWolf_Bling_Images_Plugin{
 
     public function AssignImages($ids){
         global $wpdb;
-        $she_iamge_array = array();
+        //$she_iamge_array = array();
         foreach($ids as $id){
             //$she_post_id = $id->post_id;
             $she_post_id = '10615';
