@@ -35,7 +35,7 @@ class SheWolf_Bling_Images_Plugin{
         $desc = "Placeholder";
 
         //echo "Post ID: " . $she_ids . " ";
-        //$this->GetImages($url_array, $she_ids, $desc);
+        $this->GetImages($url_array, $she_ids, $desc);
       
     }
     
@@ -125,7 +125,6 @@ class SheWolf_Bling_Images_Plugin{
 
     public function AssignImages($ids){
         global $wpdb;
-        //$she_iamge_array = array();
         foreach($ids as $id){
             //$she_post_id = $id->post_id;
             $she_post_id = '10615';
