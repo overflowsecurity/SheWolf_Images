@@ -110,18 +110,11 @@ class SheWolf_Bling_Images_Plugin{
             $she_checker = $wpdb->get_var($query2);
             if($she_checker < 1){
                 $id = media_handle_sideload($file_array, $post_id, $desc);
+                if (is_wp_error($id)) {
+                    @unlink($file_array['tmp_name']);
+                    return $id;
+                }
             }
-// If error storing permanently, unlink
-            if (is_wp_error($id)) {
-                @unlink($file_array['tmp_name']);
-                return $id;
-            }
-
-            // Attach the image to the product
-            //set_post_thumbnail($post_id, $id);
-
-            //$src = wp_get_attachment_url($id);
-
         }
     }
 
