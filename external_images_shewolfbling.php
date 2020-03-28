@@ -36,6 +36,7 @@ class SheWolf_Bling_Images_Plugin{
         ?><br></br> <?php
         //echo "Post ID: " . $she_ids . " ";
         //$this->GetImages($url_array, $she_ids, $desc);
+        echo $she_ids;
         $this->AssignImages($she_ids);
        // foreach($url_array as $url_clean){ 
             //echo "URLs: " . $url_clean . " ";
