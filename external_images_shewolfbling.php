@@ -139,7 +139,7 @@ class SheWolf_Bling_Images_Plugin{
             $query2 = 'SELECT COUNT(*) FROM wp_postmeta WHERE post_id = ' . $she_post_id . ' AND meta_key = "_thumbnail_id";';
             $she_checker = $wpdb->get_var($query2);
      
-            if($she_checker > 1){
+            if($she_checker < 1){
                 set_post_thumbnail($she_post_id, $she_image_array[0]);
                 if(sizeof($she_image_array) > 1) {
                     array_shift($she_image_array);
