@@ -144,20 +144,20 @@ class SheWolf_Bling_Images_Plugin{
         foreach($ids as $id){
             $she_post_id = $id->post_id;
             $query = 'SELECT * FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = ' . $she_post_id . ";";
-            foreach( $wpdb->get_results($query) as $key => $she_image_results) {
+            $test = $wpdb->get_results($query);
+            ?><br></br><?php
+            echo "Post ID: " . $she_post_id;
+            ?><br></br><?php
+            echo $test;
+            ?><br></br><?php
+/*             foreach( $wpdb->get_results($query) as $key => $she_image_results) {
                 $she_image_ids = $she_image_results->ID;
                 echo "Post ID: " . $she_post_id;
                 ?><br></br><?php
                 echo $she_image_ids;
                 ?><br></br><?php
-/*                 foreach($she_image_ids as $she_image_id){
-                    echo $she_post_id;
-                    ?><br></br><?php
-                    echo $she_image_id->ID;
-                    ?><br></br><?php
-                } */
 
-        }
+        } */
 
     }
 
