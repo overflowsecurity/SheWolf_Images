@@ -39,7 +39,7 @@ class SheWolf_Bling_Images_Plugin{
         ?><br></br> <?php
         //echo "Post ID: " . $she_ids . " ";
         //$this->GetImages($url_array, $she_ids, $desc);
-        $this->AssignImages($she_ids_array);
+        //$this->AssignImages($she_ids_array);
        // foreach($url_array as $url_clean){ 
             //echo "URLs: " . $url_clean . " ";
         //}
@@ -140,7 +140,7 @@ class SheWolf_Bling_Images_Plugin{
     }
 
     public function AssignImages($ids){
-
+        global $wpdb;
         foreach($ids as $id){
             $query = 'SELECT * FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = ' . $id . ";";
             foreach( $wpdb->get_results($query) as $key => $she_image_results) {
