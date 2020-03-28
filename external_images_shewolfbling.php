@@ -75,7 +75,7 @@ class SheWolf_Bling_Images_Plugin{
     //Importing Jewelry images
     public function GetImages($urls, $post_id, $desc)
     {
-
+        global $wpdb;
         require_once(ABSPATH . "wp-admin" . '/includes/image.php');
         require_once(ABSPATH . "wp-admin" . '/includes/file.php');
         require_once(ABSPATH . "wp-admin" . '/includes/media.php');
@@ -106,7 +106,7 @@ class SheWolf_Bling_Images_Plugin{
 
 
 // do the validation and storage stuff
-            $query2 = 'SELECT COUNT(*) FROM wp_postmeta WHERE post_id = ' . $she_post_id . ' AND meta_key = "_thumbnail_id";';
+            $query2 = 'SELECT COUNT(*) FROM wp_postmeta WHERE post_id = ' . $post_id . ' AND meta_key = "_thumbnail_id";';
             $she_checker = $wpdb->get_var($query2);
             if($she_checker < 1){
                 $id = media_handle_sideload($file_array, $post_id, $desc);
