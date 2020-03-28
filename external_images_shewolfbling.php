@@ -32,7 +32,6 @@ class SheWolf_Bling_Images_Plugin{
         $she_ids = $urls->post_id;
         $she_urls = $urls->meta_value;
         $url_array = explode("|", $she_urls);
-        $desc = "test";
         ?><br></br> <?php
         //echo "Post ID: " . $she_ids . " ";
         $this->GetImages($url_array, $she_ids, $desc);
@@ -100,7 +99,11 @@ class SheWolf_Bling_Images_Plugin{
             }
 
             $post_id = $post_id;
-            $desc = "The WordPress Logo";
+            $counter = 0;
+            while($counter < 10){
+                $counter++;
+            }
+            $desc = $post_id . "-" . $counter;
             $file_array = array();
 
 // Set variables for storage
