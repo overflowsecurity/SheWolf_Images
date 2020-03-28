@@ -150,7 +150,7 @@ class SheWolf_Bling_Images_Plugin{
             ?><br></br><?php
 
             foreach($test as $image_id){
-                $img_array = array($image_id->ID);
+                $img_array = $img_array . array($image_id->ID);
                 ?><br></br><?php
             }
             var_dump($img_array);
