@@ -154,7 +154,7 @@ class SheWolf_Bling_Images_Plugin{
                 array_push($test_array, $test);
                 ?><br></br><?php
             }
-            print $test_array;
+            var_dump($test_array);
             $test_array = array();
 
     }
