@@ -36,6 +36,7 @@ class SheWolf_Bling_Images_Plugin{
             echo "URLs: " . $url_clean . " ";
         }
         ?><br></br> <?php
+        echo $url_array;
     }
     //echo $response->meta_value;
     //$urls = $response->meta_value;
