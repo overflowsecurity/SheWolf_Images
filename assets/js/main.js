@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
             success:function (output) {
                 console.log(output);
                 $('#send_message').text('Success!');
-                $('#response').text('response : ' + JSON.stringify(response) );
+                $('#output').text('response : ' + JSON.stringify(output) );
                
             },
             error:function (error) {
