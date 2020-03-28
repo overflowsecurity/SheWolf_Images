@@ -57,12 +57,7 @@ class SheWolf_Bling_Images_Plugin{
     public function create_plugin_settings_page()
     {
 
-        if (!function_exists('media_handle_upload')) {
-            require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-            require_once(ABSPATH . "wp-admin" . '/includes/file.php');
-            require_once(ABSPATH . "wp-admin" . '/includes/media.php');
-        }
-        
+
         // Add the menu item and page
         $page_title = 'SheWolf External Images Settings';
         $menu_title = 'SheWolf Images';
@@ -89,11 +84,13 @@ class SheWolf_Bling_Images_Plugin{
 
 
     //Importing Jewelry images
-    public function GetImages($urls, $post_id, $desc)
+    function GetImages($urls, $post_id, $desc)
     {
 
-
-
+        require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+        require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+        require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+        
         foreach ($urls as $url) {
             $tmp = download_url($url);
             if (is_wp_error($tmp)) {
