@@ -23,12 +23,6 @@ class SheWolf_Bling_Images_Plugin{
 
     function custom_action()
 {
-
-    if (!function_exists('media_handle_upload')) {
-        require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-        require_once(ABSPATH . "wp-admin" . '/includes/file.php');
-        require_once(ABSPATH . "wp-admin" . '/includes/media.php');
-    }
     
     global $wpdb;
     //Get image info
@@ -62,6 +56,13 @@ class SheWolf_Bling_Images_Plugin{
 
     public function create_plugin_settings_page()
     {
+
+        if (!function_exists('media_handle_upload')) {
+            require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+            require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+            require_once(ABSPATH . "wp-admin" . '/includes/media.php');
+        }
+        
         // Add the menu item and page
         $page_title = 'SheWolf External Images Settings';
         $menu_title = 'SheWolf Images';
