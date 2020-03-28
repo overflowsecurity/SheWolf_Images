@@ -102,7 +102,7 @@ class SheWolf_Bling_Images_Plugin{
             $post_id = $post_id;
             $counter = 0;  
             if $counter < 10 {
-                $counter++
+                $counter++;
             }        
             $desc = $post_id . "-" . $counter;
             $file_array = array();
