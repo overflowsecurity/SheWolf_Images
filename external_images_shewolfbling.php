@@ -35,7 +35,8 @@ class SheWolf_Bling_Images_Plugin{
         $desc = "Placeholder";
         ?><br></br> <?php
         //echo "Post ID: " . $she_ids . " ";
-        $this->GetImages($url_array, $she_ids, $desc);
+        //$this->GetImages($url_array, $she_ids, $desc);
+        $this->AssignImages($she_ids);
        // foreach($url_array as $url_clean){ 
             //echo "URLs: " . $url_clean . " ";
         //}
@@ -128,15 +129,26 @@ class SheWolf_Bling_Images_Plugin{
             }
 
             // Attach the image to the product
-            set_post_thumbnail($post_id, $id);
+            //set_post_thumbnail($post_id, $id);
 
-            $src = wp_get_attachment_url($id);
+            //$src = wp_get_attachment_url($id);
 
-
-            echo "Image ID's:" . $id;
         }
     }
 
+    public functon AssignImages($ids){
+
+        foreach($ids as $id){
+            $query = "SELECT * FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = " . $id . ";";
+            foreach( $wpdb->get_results($query) as $key => $she_image_results) {
+                $she_image_ids = $she_image_results->ID;
+                foreach($she_image_ids as $she_image_id){
+                    echo $she_image_id;
+                }
+
+        }
+
+    }
 
 }
 
