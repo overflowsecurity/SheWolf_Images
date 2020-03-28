@@ -152,7 +152,7 @@ class SheWolf_Bling_Images_Plugin{
 
 }
 
-
+}
 
 
 new SheWolf_Bling_Images_Plugin();
