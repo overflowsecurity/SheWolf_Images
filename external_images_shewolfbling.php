@@ -16,6 +16,7 @@ class SheWolf_Bling_Images_Plugin{
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
         //test
         add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
+        add_action( 'init', array( $this, 'GetImages' ));
         
 
     }
@@ -24,7 +25,6 @@ class SheWolf_Bling_Images_Plugin{
 
     function custom_action()
 {
-    add_action( 'init','GetImages' );
     global $wpdb;
     //Get image info
     $query = 'SELECT * FROM wp_postmeta WHERE meta_key = "external_image_url"';
