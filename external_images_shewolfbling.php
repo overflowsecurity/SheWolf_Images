@@ -37,6 +37,7 @@ class SheWolf_Bling_Images_Plugin{
     echo $phpVar;
     wp_die();
 
+    <div id="print_out"></div>
     //return $results->meta_value;
     //$this->GetImages()
 }
@@ -61,7 +62,7 @@ class SheWolf_Bling_Images_Plugin{
         echo "<script src='" . plugins_url('/assets/js/main.js', __FILE__) . "'></script>";
         ?>
 	    <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
-        <div id="print_out"></div>
+        
 
 
 <?php
