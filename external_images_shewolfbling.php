@@ -31,11 +31,11 @@ class SheWolf_Bling_Images_Plugin{
         $she_urls = $urls->meta_value;
         $url_array = explode("|", $she_urls);
         ?><br></br> <?php
-        echo "Post ID: " . $she_ids . " ";
-        //GetImages($url_array, $she_ids, $desc);
-        foreach($url_array as $url_clean){ 
-            echo "URLs: " . $url_clean . " ";
-        }
+        //echo "Post ID: " . $she_ids . " ";
+        GetImages($url_array, $she_ids, $desc);
+       // foreach($url_array as $url_clean){ 
+            //echo "URLs: " . $url_clean . " ";
+        //}
         ?><br></br> <?php
         
     }
@@ -123,7 +123,7 @@ class SheWolf_Bling_Images_Plugin{
             }
 
             // Attach the image to the product
-            //set_post_thumbnail($post_id, $id);
+            set_post_thumbnail($post_id, $id);
 
             $src = wp_get_attachment_url($id);
 
