@@ -35,8 +35,10 @@ class SheWolf_Bling_Images_Plugin{
     echo $cleanup[1];
     $phpVar =  $_COOKIE['var1'];
     echo $phpVar;
+    $test = $cleanup[0];
     wp_die();
 
+    echo $test;
 
     //return $results->meta_value;
     //$this->GetImages()
