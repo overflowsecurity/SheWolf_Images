@@ -136,7 +136,7 @@ class SheWolf_Bling_Images_Plugin{
         }
     }
 
-    public functon AssignImages($ids){
+    public function AssignImages($ids){
 
         foreach($ids as $id){
             $query = "SELECT * FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = " . $id . ";";
