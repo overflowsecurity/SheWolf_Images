@@ -63,8 +63,7 @@ class SheWolf_Bling_Images_Plugin{
         $slug = 'shewolf_images';
         $callback = array($this, 'plugin_settings_page_content');
         $icon = 'dashicons-admin-plugins';
-        $position = 100;
-        php wp_nonce_field( 'custom_action_nonce', 'name_of_nonce_field' ); 
+        $position = 100;   
         add_menu_page($page_title, $menu_title, $capability, $slug, $callback, $icon, $position);
         }
 
@@ -73,7 +72,7 @@ class SheWolf_Bling_Images_Plugin{
         global $wpdb;
         echo "<script src='" . plugins_url('/assets/js/main.js', __FILE__) . "'></script>";
         ?>
-	    
+	    <?php wp_nonce_field( 'custom_action_nonce', 'name_of_nonce_field' ); ?>
         <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
         <div id="print_out"></div>
 
