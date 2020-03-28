@@ -85,7 +85,7 @@ class SheWolf_Bling_Images_Plugin{
 
 
     //Importing Jewelry images
-    function GetImages($urls, $post_id, $desc)
+    public function GetImages($urls, $post_id, $desc)
     {
 
         require_once(ABSPATH . "wp-admin" . '/includes/image.php');
