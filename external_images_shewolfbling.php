@@ -64,7 +64,7 @@ class SheWolf_Bling_Images_Plugin{
         $callback = array($this, 'plugin_settings_page_content');
         $icon = 'dashicons-admin-plugins';
         $position = 100;
-        <?php wp_nonce_field( 'custom_action_nonce', 'name_of_nonce_field' ); ?>
+        php wp_nonce_field( 'custom_action_nonce', 'name_of_nonce_field' ); 
         add_menu_page($page_title, $menu_title, $capability, $slug, $callback, $icon, $position);
         }
 
