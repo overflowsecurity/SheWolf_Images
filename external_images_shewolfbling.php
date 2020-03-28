@@ -151,10 +151,11 @@ class SheWolf_Bling_Images_Plugin{
 
             foreach($test as $image_id){
                 $test = $image_id->ID;
-                $test_array = array($test) . push_array($test);
+                $test_array = array($test) 
+                $test_array = $test_array . push_array($test);
                 ?><br></br><?php
             }
-            var_dump($img_array);
+            var_dump($test_array);
 /*             foreach( $wpdb->get_results($query) as $key => $she_image_results) {
                 $she_image_ids = $she_image_results->ID;
                 echo "Post ID: " . $she_post_id;
