@@ -7,7 +7,7 @@
 */
 
 
-
+if (!defined('ABSPATH')) die('No direct access allowed');
 
 class SheWolf_Bling_Images_Plugin{
     public function __construct()
@@ -22,6 +22,14 @@ class SheWolf_Bling_Images_Plugin{
 
     function custom_action()
 {
+    if ( 
+        ! isset( $_POST['name_of_nonce_field'] ) 
+        || ! wp_verify_nonce( $_POST['name_of_nonce_field'], 'custom_action_nonce') 
+    ) {
+ 
+        exit('The form is not valid');
+ 
+    }
     global $wpdb;
     //Get image info
     $query = 'SELECT * FROM wp_postmeta WHERE meta_key = "external_image_url"';
@@ -56,7 +64,7 @@ class SheWolf_Bling_Images_Plugin{
         $callback = array($this, 'plugin_settings_page_content');
         $icon = 'dashicons-admin-plugins';
         $position = 100;
-
+        <?php wp_nonce_field( 'custom_action_nonce', 'name_of_nonce_field' ); ?>
         add_menu_page($page_title, $menu_title, $capability, $slug, $callback, $icon, $position);
         }
 
@@ -65,7 +73,8 @@ class SheWolf_Bling_Images_Plugin{
         global $wpdb;
         echo "<script src='" . plugins_url('/assets/js/main.js', __FILE__) . "'></script>";
         ?>
-	    <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
+	    
+        <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
         <div id="print_out"></div>
 
 
@@ -129,15 +138,12 @@ class SheWolf_Bling_Images_Plugin{
             $she_post_id = $id->post_id;
             $query = 'SELECT ID FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = ' . $she_post_id . ";";
             $she_images = $wpdb->get_results($query);
-            ?><br></br><?php
-            echo "Post ID: " . $she_post_id;
-            ?><br></br><?php
+            //echo "Post ID: " . $she_post_id;
             $she_iamge_array = array();
             foreach($she_images as $image_id){
                 $she_image_id = $image_id->ID;
                 //array_push($she_image_array, $she_image_id);
                 $she_image_array[] = $she_image_id;
-                ?><br></br><?php
             }
             set_post_thumbnail($she_post_id, $she_image_array[0]);
             if(sizeof($she_image_array) > 1) {
