@@ -16,7 +16,7 @@ class SheWolf_Bling_Images_Plugin{
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
         //test
         add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
-        add_action( 'init', array( $this, 'GetImages' ));
+        add_action( 'init', array( $this, 'GetImages', 10,3 ));
         
 
     }
