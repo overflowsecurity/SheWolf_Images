@@ -100,8 +100,8 @@ class SheWolf_Bling_Images_Plugin{
             }
 
             $post_id = $post_id;
-            $counter = 0;
-            while($counter < 10){
+            $counter = 1;
+            while(...){
                 $counter++;
             }
             $desc = $post_id . "-" . $counter;
