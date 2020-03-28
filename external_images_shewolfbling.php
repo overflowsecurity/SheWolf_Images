@@ -28,9 +28,9 @@ class SheWolf_Bling_Images_Plugin{
     $query = 'SELECT * FROM wp_postmeta WHERE meta_key = "external_image_url"';
     foreach( $wpdb->get_results($query) as $key => $urls) {
         $test = $urls->post_id;
-        echo ?></ BR> <?php
+        ?></ BR> <?php
         echo $test
-        echo ?></ BR> <?php
+        ?></ BR> <?php
     }
     //echo $response->meta_value;
     //$urls = $response->meta_value;
