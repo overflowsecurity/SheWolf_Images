@@ -100,8 +100,11 @@ class SheWolf_Bling_Images_Plugin{
             }
 
             $post_id = $post_id;
-            $counter = 0;            
-            $desc = $post_id . "-" . ++$counter;
+            $counter = 0;  
+            if $counter < 10 {
+                $counter++
+            }        
+            $desc = $post_id . "-" . $counter;
             $file_array = array();
 
 // Set variables for storage
