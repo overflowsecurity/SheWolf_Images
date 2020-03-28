@@ -149,7 +149,7 @@ class SheWolf_Bling_Images_Plugin{
             echo "Post ID: " . $she_post_id;
             ?><br></br><?php
 
-            foreach($test as $image_id => $a){
+            foreach($test as $image_id){
                 $test = $image_id->ID;
                 $test_array = array_fill($test);
                 ?><br></br><?php
