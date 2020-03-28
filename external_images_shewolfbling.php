@@ -16,7 +16,7 @@ class SheWolf_Bling_Images_Plugin{
         add_action('admin_menu', array($this, 'create_plugin_settings_page'));
         //test
         add_action( 'wp_ajax_custom_action', array( $this, 'custom_action' ));
-        add_action( 'admin_post_GetImages', array( $this, 'GetImages', 10,3 ));
+        //add_action( 'admin_post_GetImages', array( $this, 'GetImages', 10,3 ));
         
 
     }
@@ -35,7 +35,7 @@ class SheWolf_Bling_Images_Plugin{
         $desc = "test";
         ?><br></br> <?php
         //echo "Post ID: " . $she_ids . " ";
-        GetImages($url_array, $she_ids, $desc);
+        $this->GetImages($url_array, $she_ids, $desc);
        // foreach($url_array as $url_clean){ 
             //echo "URLs: " . $url_clean . " ";
         //}
