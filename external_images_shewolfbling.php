@@ -106,8 +106,11 @@ class SheWolf_Bling_Images_Plugin{
 
 
 // do the validation and storage stuff
-            $id = media_handle_sideload($file_array, $post_id, $desc);
-
+            $query2 = 'SELECT COUNT(*) FROM wp_postmeta WHERE post_id = ' . $she_post_id . ' AND meta_key = "_thumbnail_id";';
+            $she_checker = $wpdb->get_var($query2);
+            if($she_checker < 1){
+                $id = media_handle_sideload($file_array, $post_id, $desc);
+            }
 // If error storing permanently, unlink
             if (is_wp_error($id)) {
                 @unlink($file_array['tmp_name']);
