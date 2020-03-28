@@ -61,6 +61,7 @@ class SheWolf_Bling_Images_Plugin{
         echo "<script src='" . plugins_url('/assets/js/main.js', __FILE__) . "'></script>";
         ?>
 	    <button id="send_button" type="button">Process Images</button><div id="send_message"></div>
+        <div id="print_out"></div>
 
 
 <?php
