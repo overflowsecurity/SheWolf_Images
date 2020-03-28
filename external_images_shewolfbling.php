@@ -44,8 +44,8 @@ class SheWolf_Bling_Images_Plugin{
     wp_die();
 
     echo "Output: " . $_POST['send_message'];
-
-    public function create_plugin_settings_page()
+}
+   public function create_plugin_settings_page()
     {
 
         // Add the menu item and page
