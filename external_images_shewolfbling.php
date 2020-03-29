@@ -139,8 +139,9 @@ class SheWolf_Bling_Images_Plugin{
     
                     $query2 = 'SELECT meta_id from shewolfb_wp.wp_postmeta WHERE post_id = ' . $she_post_id . ' and meta_key = "external_image_url";';
                     $she_meta_id = $wpdb->get_row($query2);
-                    echo $she_meta_id->meta_id;
-
+                    $she_del_id = $she_meta_id->meta_id;
+                    $table = 'wp_postmeta';
+                    $wpdb->delete( $table, array( 'meta_id' => $she_del_id ) );
                 }
             
         }
