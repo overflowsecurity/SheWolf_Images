@@ -137,7 +137,7 @@ class SheWolf_Bling_Images_Plugin{
                     update_post_meta($she_post_id, '_product_image_gallery', implode(',',$she_image_array));
                     $she_image_array = array();
     
-                    $query2 = 'SELECT meta_id from shewolfb_wp.wp_postmeta WHERE post_id = ' . $she_post_id . 'and meta_key = "external_image_url";';
+                    $query2 = 'SELECT meta_id from shewolfb_wp.wp_postmeta WHERE post_id = ' . $she_post_id . ' and meta_key = "external_image_url";';
                     $she_meta_id = $wpdb->get_row($query2);
                     echo $she_meta_id;
 
