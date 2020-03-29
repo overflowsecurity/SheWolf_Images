@@ -16,3 +16,7 @@ function change_product_image($product_id, $imagesForProduct) {
 }
 So to clarify you would then:
 change_product_image({productID}, $imagesForProduct);
+
+
+
+DELETE FROM `shewolfb_wp`.`wp_postmeta` WHERE (`meta_id` = '90804');
