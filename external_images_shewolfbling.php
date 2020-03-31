@@ -1,6 +1,6 @@
 <?php
 /*
-    Plugin Name: SheWolf Bling External Images
+    Plugin Name: SheWolf Bling External Image Processing
     description: This plugin was built strickly for sure with www.shewolfbling.com, and will not work properly if loaded on another site.  This is used to load and assign imaged to products that were imported with the accompanying external .NET code. 
     Author: Justin Tharpe
     Version: Beta 1.2.0
