@@ -120,7 +120,7 @@ class SheWolf_Bling_Images_Plugin{
         global $wpdb;
         foreach($ids as $id){
             $she_post_id = $id->post_id;
-            $query = 'SELECT ID FROM shewolfb_wp.wp_posts WHERE post_type = "attachment" AND post_parent = ' . $she_post_id . ";";
+            $query = 'SELECT ID FROM wp_posts WHERE post_type = "attachment" AND post_parent = ' . $she_post_id . ";";
             $she_images = $wpdb->get_results($query);
             //echo "Post ID: " . $she_post_id;
             $she_iamge_array = array();
@@ -137,7 +137,7 @@ class SheWolf_Bling_Images_Plugin{
                     update_post_meta($she_post_id, '_product_image_gallery', implode(',',$she_image_array));
                     $she_image_array = array();
     
-                    $query2 = 'SELECT meta_id from shewolfb_wp.wp_postmeta WHERE post_id = ' . $she_post_id . ' and meta_key = "external_image_url";';
+                    $query2 = 'SELECT meta_id from wp_postmeta WHERE post_id = ' . $she_post_id . ' and meta_key = "external_image_url";';
                     $she_meta_id = $wpdb->get_row($query2);
                     $she_del_id = $she_meta_id->meta_id;
                     $table = 'wp_postmeta';
